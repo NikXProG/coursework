@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdio>
 #include <cstdlib>
 #include <fstream>
 #include <string>
@@ -25,16 +24,6 @@ struct Token {
     char** token_array = nullptr;
 };
 
-struct str_code {
-    char* code = nullptr;
-    bool flag_def;
-};
-
-struct source_code {
-    size_t size = 0;
-    const char* type = "Code";
-    str_code* source_array = nullptr;
-};
 
 
 int main(int argc, char* argv[]) {
