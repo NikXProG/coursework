@@ -1,6 +1,6 @@
 #ifndef PARSER_BUILDER_H
 #define PARSER_BUILDER_H
-
+#include <string>
 
 class parser_builder{
 
@@ -23,6 +23,8 @@ private:
         std::string type = "Code";
         str_code* source_array = nullptr;
     };
+public:
+    source_code* Source = nullptr;
 
 public:
 
@@ -30,6 +32,9 @@ public:
     
     ~parser_builder() noexcept = default;
 
-    source_code* create_buffer(std::string const &file_path);
+    parser_builder* create_buffer(std::string const &file_path);
+    
+    parser_builder* info();
+    
 };
 #endif

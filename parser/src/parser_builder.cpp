@@ -7,7 +7,7 @@ parser_builder::parser_builder() {
     // Реализация конструктора
 }
 
-parser_builder::source_code* parser_builder::create_buffer(std::string const &file_path) {
+parser_builder* parser_builder::create_buffer(std::string const &file_path) {
     
 
     std::ifstream inf(file_path);
@@ -19,14 +19,13 @@ parser_builder::source_code* parser_builder::create_buffer(std::string const &fi
 
     std::string line;
     
-    parser_builder::source_code* Source;
 
     // длина исходного кода
-    while (getline(inf, line)) Source->size++;
+    while (getline(inf, line)) parser_builder::Source->size++;
 
-    Source->source_array = new parser_builder::str_code[++Source->size];
+    parser_builder::Source->source_array = new parser_builder::str_code[++parser_builder::Source->size];
 
-    if (Source->source_array == nullptr) {
+    if (parser_builder::Source->source_array == nullptr) {
         throw std::bad_alloc();
     }
 
@@ -38,15 +37,21 @@ parser_builder::source_code* parser_builder::create_buffer(std::string const &fi
 
     // backup
     while (getline(inf, line)) {
-        Source->source_array[i].code = new char[line.length() + 1];
+        parser_builder::Source->source_array[i].code = new char[line.length() + 1];
 
-        if (Source->source_array[i].code.empty()) {
+        if (parser_builder::Source->source_array[i].code.empty()) {
             throw std::bad_alloc();
         }
-        Source->source_array[i].code = line;
+        parser_builder::Source->source_array[i].code = line;
         i++;
     }
 
-    return Source;
+    return this;
 }
 
+parser_builder* parser_builder::info(){
+   for (size_t i = 0; i < parser_builder::Source->size ; i++) {
+    std::cout << parser_builder::Source->source_array[i].code << std::endl;
+   }
+    return this;
+}
