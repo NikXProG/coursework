@@ -1,6 +1,9 @@
 C:/coursework/build/CMakeFiles/ALL_BUILD.dir
 C:/coursework/build/CMakeFiles/ZERO_CHECK.dir
-C:/coursework/build/parser/CMakeFiles/crcwrk_prsr.dir
-C:/coursework/build/parser/CMakeFiles/ALL_BUILD.dir
-C:/coursework/build/parser/tests/CMakeFiles/crcwrk_prsr_tests.dir
-C:/coursework/build/parser/tests/CMakeFiles/ALL_BUILD.dir
+C:/coursework/build/interpreter/CMakeFiles/ALL_BUILD.dir
+C:/coursework/build/interpreter/lexer/CMakeFiles/crcwrk_intprtr_lxr.dir
+C:/coursework/build/interpreter/lexer/CMakeFiles/ALL_BUILD.dir
+C:/coursework/build/interpreter/parser/CMakeFiles/crcwrk_intprtr_prsr.dir
+C:/coursework/build/interpreter/parser/CMakeFiles/ALL_BUILD.dir
+C:/coursework/build/interpreter/tests/CMakeFiles/crcwrk_intprtr_tests.dir
+C:/coursework/build/interpreter/tests/CMakeFiles/ALL_BUILD.dir

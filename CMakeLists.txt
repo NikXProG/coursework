@@ -3,5 +3,4 @@ project(crcwrk)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# Добавление поддиректории parser
-add_subdirectory(parser)
+add_subdirectory(interpreter)
