@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/json-populate"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/f8ea05ded74cbdcf5e28c8976089193a/json-populate.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/f555690c7c9414f134635bde8c696072/json-populate-complete.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-build.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-configure.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-download.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-install.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-patch.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-test.rule"
+		},
+		{
+			"file" : "C:/coursework/build/_deps/json-subbuild/CMakeFiles/d218954c38d999e07586603296e681fc/json-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"json-populate"
+		],
+		"name" : "json-populate"
+	}
+}

@@ -173,17 +173,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\coursework\build\interpreter\lexer\crcwrk_intprtr_lxr.vcxproj">
-      <Project>{F6D534FC-3525-3122-B67C-6F056259C04A}</Project>
-      <Name>crcwrk_intprtr_lxr</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\coursework\build\interpreter\parser\crcwrk_intprtr_prsr.vcxproj">
-      <Project>{835718E4-F473-3756-948B-25B35892C86B}</Project>
-      <Name>crcwrk_intprtr_prsr</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\coursework\build\interpreter\tests\crcwrk_intprtr_tests.vcxproj">
-      <Project>{6E184E26-E5ED-3BCD-9BC2-B996CD27AE9B}</Project>
-      <Name>crcwrk_intprtr_tests</Name>
+    <ProjectReference Include="C:\coursework\build\text_transformer\crcwrk_txt_trans.vcxproj">
+      <Project>{9261544C-825E-3552-96E0-52FB5D539890}</Project>
+      <Name>crcwrk_txt_trans</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

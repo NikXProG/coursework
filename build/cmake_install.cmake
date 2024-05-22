@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/coursework/build/interpreter/cmake_install.cmake")
+  include("C:/coursework/build/text_transformer/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

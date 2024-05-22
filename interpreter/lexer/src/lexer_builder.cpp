@@ -150,7 +150,11 @@ lexer_builder* lexer_builder::tokenization(){
             }             
         }
         checkAlpNum(accumulated_string);
-    }   
+    } 
+      
+    for (int i = 0; i < tokens->size; i++){
+        std::cout << lexer::token_to_string(tokens->token[i].type) << " " << tokens->token[i].value << std::endl;
+    }
 
     return this;
 }

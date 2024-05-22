@@ -39,6 +39,7 @@ public:
         Token* token= nullptr;
     };
 
+
 public:
 
     lexer() noexcept = default;
@@ -46,6 +47,7 @@ public:
     ~lexer() noexcept = default;
 
 public:
+
     static std::string token_to_string(TokenType token_type);
     static TokenType string_to_token(std::string const &token_string);
 

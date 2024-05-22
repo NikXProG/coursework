@@ -10,8 +10,8 @@ public:
     lexer::Tokens* tokens = nullptr;
 
 public:
-
-    lexer::ScriptCode* script = nullptr;
+ 
+ lexer::ScriptCode* script = nullptr;
 
 public:
 

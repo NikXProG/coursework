@@ -1,16 +1,13 @@
 #include <iostream>
 #include <lexer_builder.h>
-
+#include <parser_builder.h>
 int main(){
 
     try{
 
         auto lex_builder = new lexer_builder();
-        auto sosal = lex_builder->inizialize("../../stream.txt")->tokenization();
-        for (int i = 0; i < sosal->tokens->size; i++){
-            std::cout << lexer::token_to_string(sosal->tokens->token[i].type) << " " << sosal->tokens->token[i].value << std::endl;
-        }
-
+        auto lexer = lex_builder->inizialize("../../stream.txt")->tokenization();
+        auto parser = new parser_builder()->BuildAST(lexer);       
     
     }
 
