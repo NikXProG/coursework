@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 14)
 
 #add_subdirectory(interpreter)
 add_subdirectory(text_transformer)
+add_subdirectory(mmorpg_system_skill)

@@ -1,0 +1,984 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"build" : "text_transformer",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-text_transformer-Debug-99369a37fab41d57969e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "text_transformer",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "_deps/json-build",
+					"jsonFile" : "directory-_deps.json-build-Debug-b992325f012a7585f532.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/json-src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-mmorpg_system_skill-Debug-f9602b0679c0e9ff1069.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "mmorpg_system_skill",
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill/tests",
+					"jsonFile" : "directory-mmorpg_system_skill.tests-Debug-1e0f8ea7c93709b0747b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "mmorpg_system_skill/tests",
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "crcwrk",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "crcwrk_txt_trans",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-4d2d9d719248c8f2e4e8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@477c085812b49bf1c903",
+					"jsonFile" : "target-ALL_BUILD-Debug-13bcb8249f526af663b6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@1f73e43ed239fe3d59ae",
+					"jsonFile" : "target-ALL_BUILD-Debug-e75019a8fdef92c01891.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@e68b6759cec0008354ce",
+					"jsonFile" : "target-ALL_BUILD-Debug-c3e0bbf4f309ab013e1c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-ALL_BUILD-Debug-abd781dfdb156a94af8c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-a418c8eae3344d91db7f.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crcwrk_mmorpg_sys_skll::@e68b6759cec0008354ce",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll-Debug-402e9612dfeb3713c501.json",
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "crcwrk_mmorpg_sys_skll_tests::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll_tests-Debug-5778c7a7c1292d787eeb.json",
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "crcwrk_txt_trans::@477c085812b49bf1c903",
+					"jsonFile" : "target-crcwrk_txt_trans-Debug-17f363b4e57c947b084a.json",
+					"name" : "crcwrk_txt_trans",
+					"projectIndex" : 1
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"build" : "text_transformer",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-text_transformer-Release-99369a37fab41d57969e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "text_transformer",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "_deps/json-build",
+					"jsonFile" : "directory-_deps.json-build-Release-b992325f012a7585f532.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/json-src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-mmorpg_system_skill-Release-f9602b0679c0e9ff1069.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "mmorpg_system_skill",
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill/tests",
+					"jsonFile" : "directory-mmorpg_system_skill.tests-Release-1e0f8ea7c93709b0747b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "mmorpg_system_skill/tests",
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "crcwrk",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "crcwrk_txt_trans",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-4d2d9d719248c8f2e4e8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@477c085812b49bf1c903",
+					"jsonFile" : "target-ALL_BUILD-Release-13bcb8249f526af663b6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@1f73e43ed239fe3d59ae",
+					"jsonFile" : "target-ALL_BUILD-Release-e75019a8fdef92c01891.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@e68b6759cec0008354ce",
+					"jsonFile" : "target-ALL_BUILD-Release-c3e0bbf4f309ab013e1c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-ALL_BUILD-Release-abd781dfdb156a94af8c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-a418c8eae3344d91db7f.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crcwrk_mmorpg_sys_skll::@e68b6759cec0008354ce",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll-Release-fac983be7295669cfb77.json",
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "crcwrk_mmorpg_sys_skll_tests::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll_tests-Release-ff2199c44c4854ce8518.json",
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "crcwrk_txt_trans::@477c085812b49bf1c903",
+					"jsonFile" : "target-crcwrk_txt_trans-Release-7973df61b9ec95fb5c91.json",
+					"name" : "crcwrk_txt_trans",
+					"projectIndex" : 1
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"build" : "text_transformer",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-text_transformer-MinSizeRel-99369a37fab41d57969e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "text_transformer",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "_deps/json-build",
+					"jsonFile" : "directory-_deps.json-build-MinSizeRel-b992325f012a7585f532.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/json-src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-mmorpg_system_skill-MinSizeRel-f9602b0679c0e9ff1069.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "mmorpg_system_skill",
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill/tests",
+					"jsonFile" : "directory-mmorpg_system_skill.tests-MinSizeRel-1e0f8ea7c93709b0747b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "mmorpg_system_skill/tests",
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "crcwrk",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "crcwrk_txt_trans",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-4d2d9d719248c8f2e4e8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@477c085812b49bf1c903",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-13bcb8249f526af663b6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@1f73e43ed239fe3d59ae",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-e75019a8fdef92c01891.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@e68b6759cec0008354ce",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-c3e0bbf4f309ab013e1c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-abd781dfdb156a94af8c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-a418c8eae3344d91db7f.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crcwrk_mmorpg_sys_skll::@e68b6759cec0008354ce",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll-MinSizeRel-4dcde1703ee70180fe7c.json",
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "crcwrk_mmorpg_sys_skll_tests::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll_tests-MinSizeRel-ff4a629ac9546072020b.json",
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "crcwrk_txt_trans::@477c085812b49bf1c903",
+					"jsonFile" : "target-crcwrk_txt_trans-MinSizeRel-fbb87d8596ace2b16f27.json",
+					"name" : "crcwrk_txt_trans",
+					"projectIndex" : 1
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"build" : "text_transformer",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-text_transformer-RelWithDebInfo-99369a37fab41d57969e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "text_transformer",
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"build" : "_deps/json-build",
+					"jsonFile" : "directory-_deps.json-build-RelWithDebInfo-b992325f012a7585f532.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "build/_deps/json-src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-mmorpg_system_skill-RelWithDebInfo-f9602b0679c0e9ff1069.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "mmorpg_system_skill",
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"build" : "mmorpg_system_skill/tests",
+					"jsonFile" : "directory-mmorpg_system_skill.tests-RelWithDebInfo-1e0f8ea7c93709b0747b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 4,
+					"source" : "mmorpg_system_skill/tests",
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						3
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "crcwrk",
+					"targetIndexes" : 
+					[
+						0,
+						5
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "crcwrk_txt_trans",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						4
+					],
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"parentIndex" : 3,
+					"targetIndexes" : 
+					[
+						4,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-4d2d9d719248c8f2e4e8.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@477c085812b49bf1c903",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-13bcb8249f526af663b6.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@1f73e43ed239fe3d59ae",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-e75019a8fdef92c01891.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@e68b6759cec0008354ce",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-c3e0bbf4f309ab013e1c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "ALL_BUILD::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-abd781dfdb156a94af8c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-a418c8eae3344d91db7f.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "crcwrk_mmorpg_sys_skll::@e68b6759cec0008354ce",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll-RelWithDebInfo-576917c097aceceb775c.json",
+					"name" : "crcwrk_mmorpg_sys_skll",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "crcwrk_mmorpg_sys_skll_tests::@da7befd668b3fcaf5b68",
+					"jsonFile" : "target-crcwrk_mmorpg_sys_skll_tests-RelWithDebInfo-b4cf3a5f3ae565514ce7.json",
+					"name" : "crcwrk_mmorpg_sys_skll_tests",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "crcwrk_txt_trans::@477c085812b49bf1c903",
+					"jsonFile" : "target-crcwrk_txt_trans-RelWithDebInfo-2dd7b841d81ab4f9568a.json",
+					"name" : "crcwrk_txt_trans",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/coursework/build",
+		"source" : "C:/coursework"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

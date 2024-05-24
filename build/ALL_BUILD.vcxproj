@@ -173,6 +173,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="C:\coursework\build\mmorpg_system_skill\crcwrk_mmorpg_sys_skll.vcxproj">
+      <Project>{6CFCA3BB-C77E-32F6-9A42-81C665B738AA}</Project>
+      <Name>crcwrk_mmorpg_sys_skll</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\coursework\build\mmorpg_system_skill\tests\crcwrk_mmorpg_sys_skll_tests.vcxproj">
+      <Project>{85475B20-F3C4-355B-A5D3-A941E730BD4B}</Project>
+      <Name>crcwrk_mmorpg_sys_skll_tests</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\coursework\build\text_transformer\crcwrk_txt_trans.vcxproj">
       <Project>{9261544C-825E-3552-96E0-52FB5D539890}</Project>
       <Name>crcwrk_txt_trans</Name>

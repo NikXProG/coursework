@@ -3,3 +3,7 @@ C:/coursework/build/CMakeFiles/ZERO_CHECK.dir
 C:/coursework/build/text_transformer/CMakeFiles/crcwrk_txt_trans.dir
 C:/coursework/build/text_transformer/CMakeFiles/ALL_BUILD.dir
 C:/coursework/build/_deps/json-build/CMakeFiles/ALL_BUILD.dir
+C:/coursework/build/mmorpg_system_skill/CMakeFiles/crcwrk_mmorpg_sys_skll.dir
+C:/coursework/build/mmorpg_system_skill/CMakeFiles/ALL_BUILD.dir
+C:/coursework/build/mmorpg_system_skill/tests/CMakeFiles/crcwrk_mmorpg_sys_skll_tests.dir
+C:/coursework/build/mmorpg_system_skill/tests/CMakeFiles/ALL_BUILD.dir

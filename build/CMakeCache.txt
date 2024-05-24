@@ -311,22 +311,22 @@ crcwrk_IS_TOP_LEVEL:STATIC=ON
 crcwrk_SOURCE_DIR:STATIC=C:/coursework
 
 //Value Computed by CMake
-crcwrk_intprtr_BINARY_DIR:STATIC=C:/coursework/build/interpreter
+crcwrk_intprtr_BINARY_DIR:STATIC=C:/coursework/build/mmorpg_system_skill
 
 //Value Computed by CMake
 crcwrk_intprtr_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-crcwrk_intprtr_SOURCE_DIR:STATIC=C:/coursework/interpreter
+crcwrk_intprtr_SOURCE_DIR:STATIC=C:/coursework/mmorpg_system_skill
 
 //Value Computed by CMake
-crcwrk_intprtr_lxr_BINARY_DIR:STATIC=C:/coursework/build/interpreter/lexer
+crcwrk_intprtr_lxr_BINARY_DIR:STATIC=C:/coursework/build/mmorpg_system_skill
 
 //Value Computed by CMake
 crcwrk_intprtr_lxr_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
-crcwrk_intprtr_lxr_SOURCE_DIR:STATIC=C:/coursework/interpreter/lexer
+crcwrk_intprtr_lxr_SOURCE_DIR:STATIC=C:/coursework/mmorpg_system_skill
 
 //Value Computed by CMake
 crcwrk_intprtr_prsr_BINARY_DIR:STATIC=C:/coursework/build/interpreter/parser
@@ -345,6 +345,24 @@ crcwrk_intprtr_tests_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 crcwrk_intprtr_tests_SOURCE_DIR:STATIC=C:/coursework/interpreter/tests
+
+//Value Computed by CMake
+crcwrk_mmorpg_sys_skll_BINARY_DIR:STATIC=C:/coursework/build/mmorpg_system_skill
+
+//Value Computed by CMake
+crcwrk_mmorpg_sys_skll_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+crcwrk_mmorpg_sys_skll_SOURCE_DIR:STATIC=C:/coursework/mmorpg_system_skill
+
+//Value Computed by CMake
+crcwrk_mmorpg_sys_skll_tests_BINARY_DIR:STATIC=C:/coursework/build/mmorpg_system_skill/tests
+
+//Value Computed by CMake
+crcwrk_mmorpg_sys_skll_tests_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+crcwrk_mmorpg_sys_skll_tests_SOURCE_DIR:STATIC=C:/coursework/mmorpg_system_skill/tests
 
 //Value Computed by CMake
 crcwrk_prsr_tests_BINARY_DIR:STATIC=C:/coursework/build/interpreter/tests
@@ -490,7 +508,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=3
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

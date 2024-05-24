@@ -1,0 +1,36 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"mmorpg_system_skill/tests/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "crcwrk_mmorpg_sys_skll_tests::@da7befd668b3fcaf5b68"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@da7befd668b3fcaf5b68",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "mmorpg_system_skill/tests",
+		"source" : "mmorpg_system_skill/tests"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
