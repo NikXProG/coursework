@@ -5,6 +5,12 @@
       <FullPath>C:\coursework\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
+      <FullPath>C:\coursework\build\data_parse_logistic_company\tests\Debug\crcwrk_dt_prs_logic_company_tests.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\coursework\build\interpreter\tests\Debug\crcwrk_intprtr_tests.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>C:\coursework\build\mmorpg_system_skill\tests\Debug\crcwrk_mmorpg_sys_skll_tests.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>

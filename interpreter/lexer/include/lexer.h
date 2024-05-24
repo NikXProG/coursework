@@ -13,7 +13,8 @@ public:
         op,
         def,
         paren,
-        skip
+        skip,
+        root
     };
 
 public:

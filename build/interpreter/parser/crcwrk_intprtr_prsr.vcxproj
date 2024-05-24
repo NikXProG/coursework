@@ -261,7 +261,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\coursework\interpreter\parser\src\parser.cpp" />
     <ClCompile Include="C:\coursework\interpreter\parser\src\parser_builder.cpp" />
   </ItemGroup>
   <ItemGroup>

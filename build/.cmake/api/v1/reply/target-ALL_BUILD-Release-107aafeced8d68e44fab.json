@@ -1,0 +1,57 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "crcwrk_intprtr_lxr::@5a1904694c5a55962a68"
+		},
+		{
+			"id" : "crcwrk_intprtr_tests::@86ad6e73574f5b246b60"
+		},
+		{
+			"id" : "crcwrk_intprtr_prsr::@3a4963c009887eca9bf2"
+		},
+		{
+			"id" : "crcwrk_txt_trans::@477c085812b49bf1c903"
+		},
+		{
+			"id" : "crcwrk_mmorpg_sys_skll::@e68b6759cec0008354ce"
+		},
+		{
+			"id" : "crcwrk_mmorpg_sys_skll_tests::@da7befd668b3fcaf5b68"
+		},
+		{
+			"id" : "crcwrk_dt_prs_logic_company::@a0824e37ab92c3007e73"
+		},
+		{
+			"id" : "crcwrk_dt_prs_logic_company_tests::@3f6bd541d6606c603115"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

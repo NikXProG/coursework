@@ -9,6 +9,7 @@ std::string lexer::token_to_string(lexer::TokenType token_type) {
     case lexer::TokenType::op: return "OP";
     case lexer::TokenType::paren: return "PAREN";
     case lexer::TokenType::skip: return "SKIP";
+    case lexer::TokenType::root: return "ROOT";
     }
     throw std::out_of_range("Error: token value invalid");
 }
@@ -34,6 +35,9 @@ lexer::TokenType lexer::string_to_token(std::string const &token_string){
     }
     if (token_string == "SKIP"){
         return lexer::TokenType::skip;
+    }
+    if (token_string == "ROOT"){
+        return lexer::TokenType::root;
     }
     throw std::out_of_range("Error: Value is not token type");
 
