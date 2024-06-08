@@ -1,11 +1,12 @@
-foo(x, y):
-((x*y+2)*(25-x/y))/(3-(x+2*y));;;
-;;
-myfoo2(z): z*z+4;;;;;print z;
-myvar(i)
-=15;
+foo(x, y): ((x*y+2)*(25-x/y))/(3-(x+2*y));
+myfoo2(z): z*z+4;
+foo3(q, e): ((q*e+2)*(25-q/e))/(3-(q+4*e));
+myvar(i)=15;
 bg(f)=25;
-ccc=myfoo2(bg+myvar)*15+foo(bg*25+(6*myfoo2(myvar-10)));
+myvar3 = myvar-10;
+myvar4 = bg*25+(6*foo(myvar-10, 15));
+ccc =  myfoo2(bg+myvar)*15+foo(myvar4,  bg+myvar) / foo3(myvar4-myvar3, bg+myvar) * myfoo2(2);
 print ccc;
-bg=ccc*myvar;
-print;;
+print;
+myvar5 = ccc - (bg*myvar);
+print myvar5;

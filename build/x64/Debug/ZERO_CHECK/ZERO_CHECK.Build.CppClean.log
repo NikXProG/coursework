@@ -1,8 +1,8 @@
 c:\coursework\build\cmakefiles\generate.stamp
-c:\coursework\build\text_transformer\cmakefiles\generate.stamp
-c:\coursework\build\_deps\json-build\cmakefiles\generate.stamp
-c:\coursework\build\mmorpg_system_skill\cmakefiles\generate.stamp
-c:\coursework\build\mmorpg_system_skill\tests\cmakefiles\generate.stamp
+c:\coursework\build\interpreter\cmakefiles\generate.stamp
+c:\coursework\build\interpreter\lexer\cmakefiles\generate.stamp
+c:\coursework\build\interpreter\tests\cmakefiles\generate.stamp
+c:\coursework\build\interpreter\parser\cmakefiles\generate.stamp
 c:\coursework\build\x64\debug\zero_check\zero_check.tlog\custombuild.command.1.tlog
 c:\coursework\build\x64\debug\zero_check\zero_check.tlog\custombuild.read.1.tlog
 c:\coursework\build\x64\debug\zero_check\zero_check.tlog\custombuild.write.1.tlog

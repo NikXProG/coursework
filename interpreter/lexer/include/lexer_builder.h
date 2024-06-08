@@ -1,4 +1,22 @@
-#ifndef LEXER_BUILDER_H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#ifndef LEXER_BUILDER_H
 #define LEXER_BUILDER_H
 #include <iostream>
 #include "lexer.h"
@@ -11,7 +29,7 @@ public:
 
 public:
  
- lexer::ScriptCode* script = nullptr;
+    lexer::ScriptCode* script = nullptr;
 
 public:
 
@@ -26,8 +44,9 @@ public:
 
 private:
 
+    void AppendSemicolon();
     void checkAlpNum(std::string &accumulated_string);
 
 };
 
-#endif
+#endif*/

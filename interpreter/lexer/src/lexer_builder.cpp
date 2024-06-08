@@ -1,4 +1,27 @@
-#include "../include/lexer_builder.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include "../include/lexer_builder.h"
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -68,7 +91,14 @@ lexer_builder* lexer_builder::inizialize(std::string const &file_path){
         if (!line.empty()){ script->code[i].value = line; }
     }
 
+    AppendSemicolon();
     return this;
+}
+void lexer_builder::AppendSemicolon(){
+    for (int i= 0; i < script->size; i++){
+        script->code[i].value.append(1, ';');
+        script->code[i].size += 1;
+    }
 }
 
 lexer_builder* lexer_builder::tokenization(){
@@ -97,7 +127,7 @@ lexer_builder* lexer_builder::tokenization(){
                     accumulated_string.clear();
                 }
 
-                if (std::strchr("=()+*-:/, ", line[j]))  {
+                if (std::strchr("=()+*-:/,; ", line[j]))  {
                     tokens->size++;
                 } else{
                     throw  std::runtime_error("Syntax error: invalid character in line" + line[j]);
@@ -127,7 +157,7 @@ lexer_builder* lexer_builder::tokenization(){
                     tokens->token[tokens->token->index_token].type = lexer::string_to_token("ASSIGN");
                     tokens->token[tokens->token->index_token++].value = line[j];                   
 
-                } else if(line[j] == ' '){
+                } else if((line[j] == ' ') || (line[j] == ',')){
                     tokens->token[tokens->token->index_token].type = lexer::string_to_token("SKIP"); 
                     tokens->token[tokens->token->index_token++].value = line[j];  
                 }
@@ -135,7 +165,7 @@ lexer_builder* lexer_builder::tokenization(){
                     tokens->token[tokens->token->index_token].type = lexer::string_to_token("PAREN"); 
                     tokens->token[tokens->token->index_token++].value = line[j];  
                 }
-                else if( (line[j] == ':') || (line[j] == ',') ){
+                else if( (line[j] == ':') || (line[j] == ';') ){
                     tokens->token[tokens->token->index_token].type = lexer::string_to_token("DEF"); 
                     tokens->token[tokens->token->index_token++].value = line[j];  
                 } 
@@ -151,10 +181,7 @@ lexer_builder* lexer_builder::tokenization(){
         }
         checkAlpNum(accumulated_string);
     } 
-      
-    for (int i = 0; i < tokens->size; i++){
-        std::cout << lexer::token_to_string(tokens->token[i].type) << " " << tokens->token[i].value << std::endl;
-    }
+
 
     return this;
 }
@@ -166,5 +193,4 @@ void lexer_builder::checkAlpNum(std::string &accumulated_string){
         accumulated_string.clear();
     }
 
-}
-
+}*/

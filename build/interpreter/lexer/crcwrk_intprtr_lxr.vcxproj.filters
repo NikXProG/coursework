@@ -4,6 +4,9 @@
     <ClCompile Include="C:\coursework\interpreter\lexer\src\lexer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\coursework\interpreter\lexer\src\token.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\coursework\interpreter\lexer\src\lexer_builder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

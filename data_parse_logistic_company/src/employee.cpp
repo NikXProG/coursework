@@ -4,7 +4,7 @@ void Employee::calculateTotalCost(const std::string& fullName, std::map<std::str
 {
     if (fullName.empty() || employees.empty() || employees.find(fullName) == employees.end())
     {
-        throw std::invalid_argument("invalid argument detected in calculateTotalCost() functon!");
+        throw std::invalid_argument("Error: invalid argument in function calculateTotalCost!");
     }
     else
     {
@@ -21,14 +21,14 @@ void Employee::listContracts(const std::string& fullName, std::map<std::string, 
 {
     if (fullName.empty() || employees.empty()|| employees.find(fullName) == employees.end())
     {
-        throw std::invalid_argument("invalid argument detected in listContracts() functon!");
+        throw std::invalid_argument("Error: invalid argument in function listContracts!");
     }
     else
     {
         std::cout << "Contracts for " << fullName << ":" << std::endl;
         for (const auto& contract : employees[fullName].contracts) 
         {
-            std::cout << "Contract #" << contract.number << " - Cost: " << contract.cost << std::endl;
+            std::cout << "Contract " << contract.number << " - Cost  employee: " << contract.cost << std::endl;
         }
         std::cout << std::endl;
     }
@@ -38,7 +38,7 @@ void Employee::FindLongestContract(const std::string& fullName, std::map<std::st
 {
     if (fullName.empty() || employees.empty()|| employees.find(fullName) == employees.end())
     {
-        throw std::invalid_argument("invalid argument detected in FindLongestContract() functon!");
+        throw std::invalid_argument("Error: invalid argument in function FindCostract!");
     }
     else
     {
@@ -65,7 +65,7 @@ void Employee::FindMostExpensiveContract(const std::string& fullName, std::map<s
 {
     if (fullName.empty() || employees.empty()|| employees.find(fullName) == employees.end())
     {
-        throw std::invalid_argument("invalid argument detected in FindMostExpensiveContract() functon!");
+        throw std::invalid_argument("Error: invalid argument in function FindMostExpensiveContract!");
     }
     else
     {
@@ -80,7 +80,7 @@ void Employee::FindMostExpensiveContract(const std::string& fullName, std::map<s
             }
         }
 
-        std::cout <<"For " << fullName <<" contract #" << most_expensive_contract_number << " is the most expensive contract. Cost: " << most_expensive_contract_cost << std::endl << std::endl;
+        std::cout <<"For " << fullName <<" contract " << most_expensive_contract_number << " is the most expensive contract. Cost: " << most_expensive_contract_cost << std::endl << std::endl;
     }
 }
 

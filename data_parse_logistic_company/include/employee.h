@@ -7,7 +7,7 @@
 #include <chrono>
 #include <ctime>
 
-class Contract 
+struct Contract 
 {
 public:
     int number;

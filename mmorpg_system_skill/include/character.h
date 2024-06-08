@@ -34,12 +34,6 @@ protected:
 
 protected:
 
-    int limit_skill = 50;
-    int maxCountDamage;
-    int SummaryCharacterSkill;
-
-protected:
-
     Character(std::string name)  : name_(name) {
         std::random_device rd;
         std::srand(rd());
@@ -56,3 +50,11 @@ public:
     const std::vector<std::shared_ptr<Equipment>>& getEquipment() const { return equipment_; } ;
 
 };
+
+/*
+protected:
+
+    int limit_skill = 50;
+    int maxCountDamage;
+    int SummaryCharacterSkill;
+*/

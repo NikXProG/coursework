@@ -7,14 +7,3 @@ C:/coursework/build/interpreter/tests/CMakeFiles/crcwrk_intprtr_tests.dir
 C:/coursework/build/interpreter/tests/CMakeFiles/ALL_BUILD.dir
 C:/coursework/build/interpreter/parser/CMakeFiles/crcwrk_intprtr_prsr.dir
 C:/coursework/build/interpreter/parser/CMakeFiles/ALL_BUILD.dir
-C:/coursework/build/text_transformer/CMakeFiles/crcwrk_txt_trans.dir
-C:/coursework/build/text_transformer/CMakeFiles/ALL_BUILD.dir
-C:/coursework/build/_deps/json-build/CMakeFiles/ALL_BUILD.dir
-C:/coursework/build/mmorpg_system_skill/CMakeFiles/crcwrk_mmorpg_sys_skll.dir
-C:/coursework/build/mmorpg_system_skill/CMakeFiles/ALL_BUILD.dir
-C:/coursework/build/mmorpg_system_skill/tests/CMakeFiles/crcwrk_mmorpg_sys_skll_tests.dir
-C:/coursework/build/mmorpg_system_skill/tests/CMakeFiles/ALL_BUILD.dir
-C:/coursework/build/data_parse_logistic_company/CMakeFiles/crcwrk_dt_prs_logic_company.dir
-C:/coursework/build/data_parse_logistic_company/CMakeFiles/ALL_BUILD.dir
-C:/coursework/build/data_parse_logistic_company/tests/CMakeFiles/crcwrk_dt_prs_logic_company_tests.dir
-C:/coursework/build/data_parse_logistic_company/tests/CMakeFiles/ALL_BUILD.dir

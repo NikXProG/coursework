@@ -420,7 +420,7 @@ public:
 
 int main() {
     try{
-        const int total_count_tickets = 500000;
+        const int total_count_tickets = 30000000;
         const int total_available_numbers = 36;
         const int draw_numbers = 5;
 
@@ -430,7 +430,7 @@ int main() {
         lottery.conductDraw();
         lottery.printResults();
 
-        std::this_thread::sleep_for(1000ms);
+
 
         const int total_available_numbers2 = 36;
         const int draw_numbers2 = 5;
@@ -468,7 +468,6 @@ int main() {
 
         std::cout << std::endl;
 
-        std::this_thread::sleep_for(1000ms);
 
         LotteryStack<std::vector<int>, Stack> lottery3(total_count_tickets, total_available_numbers2, draw_numbers2);
 
@@ -478,7 +477,7 @@ int main() {
 
         std::cout << std::endl;
 
-        std::this_thread::sleep_for(1000ms);
+
 
         LotteryQueue<std::vector<int>, Queue> lottery4(total_count_tickets, total_available_numbers2, draw_numbers2);
 
