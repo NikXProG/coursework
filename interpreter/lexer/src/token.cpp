@@ -15,6 +15,20 @@ std::string Token::token_to_string(TokenType type) {
         case TokenType::SPACE: return "SPACE";
         case TokenType::PLUS: return "PLUS";
         case TokenType::SEMICOLON: return "SEMICOLON";
+        case TokenType::LOAD: return "LOAD";
+        case TokenType::SAVE: return "SAVE";
+        case TokenType::RAND: return "RAND";
+        case TokenType::CONCAT: return "CONCAT";
+        case TokenType::FREE: return "FREE";
+        case TokenType::REMOVE: return "REMOVE";
+        case TokenType::COPY: return "COPY";
+        case TokenType::SORT: return "SORT";
+        case TokenType::PERMUTE: return "PERMUTE";
+        case TokenType::XOR: return "XOR";
+        case TokenType::INTERSECT: return "INTERSECT";
+        case TokenType::STAT: return "STAT";
+        case TokenType::PRINT_ALL: return "PRINT_ALL";
+        case TokenType::PRINT_EL_LST: return "PRINT_EL_LST";
     }
     throw std::out_of_range("Error: token value invalid");    
 }
@@ -60,7 +74,42 @@ Token::TokenType Token::string_to_token(std::string const &token_string){
     if (token_string == "PRINT"){
         return TokenType::CONSOLE;
     }
-
+    if (token_string == "LOAD"){
+        return TokenType::LOAD;
+    }
+    if (token_string == "SAVE"){
+        return TokenType::SAVE;
+    }
+    if (token_string == "RAND"){
+        return TokenType::LOAD;
+    }
+    if (token_string == "CONCAT"){
+        return TokenType::SAVE;
+    }
+    if (token_string == "FREE"){
+        return TokenType::FREE;
+    }
+    if (token_string == "REMOVE"){
+        return TokenType::REMOVE;
+    }
+    if (token_string == "COPY"){
+        return TokenType::COPY;
+    }
+    if (token_string == "SORT"){
+        return TokenType::SORT;
+    }
+    if (token_string == "PERMUTE"){
+        return TokenType::PERMUTE;
+    }
+    if (token_string == "PERMUTE"){
+        return TokenType::PERMUTE;
+    }
+    if (token_string == "XOR"){
+        return TokenType::XOR;
+    }
+    if (token_string == "INTERSECT"){
+        return TokenType::INTERSECT;
+    }    
     throw std::out_of_range("Error: Value is not token type");
 
 }

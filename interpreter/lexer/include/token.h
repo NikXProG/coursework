@@ -23,7 +23,20 @@ public:
         LPAREN,
         RPAREN,
         COLON,
-        FUNCTION
+        LOAD,
+        SAVE,
+        RAND,
+        CONCAT,
+        FREE, 
+        REMOVE, 
+        COPY, 
+        SORT, 
+        PERMUTE, 
+        XOR, 
+        STAT,
+        INTERSECT,
+        PRINT_ALL,
+        PRINT_EL_LST
     }; 
 
 private:

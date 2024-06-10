@@ -5,7 +5,10 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <cctype>
 #include <sstream>
+#include <fstream>
+#include <random>
 #include "recursive_descent_parser.h"
 #include "./AST/expression_node.h"
 #include "./AST/statement_node.h"
@@ -30,6 +33,8 @@ private:
     std::unordered_map<std::string, std::any> stack_variable;
     std::unordered_map<std::string, std::string> stack_function;
     std::unordered_map<std::string, std::string> stack_function_variable;
+    std::unordered_map<std::string, std::vector<int>> array;
+
 public:
 
     Parser() noexcept = default;
@@ -37,6 +42,7 @@ public:
     Parser(Lexer& lexer) {
         this->tokens = lexer.getTokenList();
         this->tokens_size = lexer.getTokenSize();
+        srand(time(nullptr));
     }
 
     Token* match(std::vector<Token::TokenType> tokenType) {
@@ -80,17 +86,51 @@ public:
 
         return root; // Возвращаем указатель на созданный объект
     }
+
+    ExpressionNode* parseSystemBoxFunction() {    
+
+        auto opLog = this->match({Token::TokenType::CONSOLE});
         
+        if (opLog != nullptr){
+            return new UnarOperationNode(opLog, this->parseRightExpression());
+        }
+
+
+        auto opFunc = this->match({
+        Token::TokenType::LOAD, 
+        Token::TokenType::SAVE, 
+        Token::TokenType::RAND, 
+        Token::TokenType::CONCAT, 
+        Token::TokenType::FREE,
+        Token::TokenType::REMOVE, 
+        Token::TokenType::COPY, 
+        Token::TokenType::SORT,
+        Token::TokenType::PERMUTE,
+        Token::TokenType::XOR,
+        Token::TokenType::INTERSECT, 
+        Token::TokenType::STAT,
+        Token::TokenType::PRINT_ALL,
+        Token::TokenType::PRINT_EL_LST                    
+        });
+
+        if (opFunc != nullptr){
+
+            return new VariableNode(opFunc); 
+        }
+
+
+        throw std::runtime_error("invalid operator " + std::to_string(this->pos) );
+    }   
+
     ExpressionNode* parseExpression() {
 
         auto id = this->match({Token::TokenType::ID});
         // если не переменная, то смотрим на print
-        if (id == nullptr || (!id->getValue().compare("print"))) {
+        if (id == nullptr) {
             
-            auto printNode = this->parsePrint();
+            auto printNode = this->parseSystemBoxFunction();
             return printNode; 
         }
-
 
         // уменьшаем так как отработали лишнее действие поверкой 
         this->pos -= 1;
@@ -130,21 +170,6 @@ public:
 
         return leftNode; 
     }
-
-    ExpressionNode* parsePrint() {
-        
-        auto opLog = this->match({Token::TokenType::CONSOLE});
-
-        
-        if (opLog != nullptr){
-
-
-            return new UnarOperationNode(opLog, this->parseRightExpression());
-
-        }
-
-        throw std::runtime_error("invalid operator " + std::to_string(this->pos) );
-    }
     
     ExpressionNode* parseParentheses() { // Changed return type to pointer
         if (this->match({Token::TokenType::LPAREN}) != nullptr){
@@ -183,7 +208,14 @@ public:
         throw std::runtime_error("Waiting number or defenition variable in position " + this->pos);
     }
 
- 
+
+    std::string toUpper(const std::string& str) {
+        std::string result = str;
+        std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c) {
+            return std::toupper(c);
+        });
+        return result;
+    }
 
     std::vector<std::string> split(const std::string &str, const std::string &delimiters,  bool saveDelimiters = false) {
         std::vector<std::string> tokens;
@@ -214,6 +246,7 @@ public:
         } else if (auto unarNode = dynamic_cast<UnarOperationNode*>(node)) {
             switch (unarNode->op->getType()) {
                 case Token::TokenType::CONSOLE:
+
                     if (this->run(unarNode->operand).type() == typeid(float)){
                         std::cout << std::any_cast<float>(this->run(unarNode->operand)) << std::endl;
                     }
@@ -510,21 +543,461 @@ public:
 
         } else if (auto varNode = dynamic_cast<VariableNode*>(node)) {
 
-            auto it = this->stack_variable.find(varNode->id->getValue());
+            std::string varNodeValue = varNode->id->getValue();
+            auto it = this->stack_variable.find(varNodeValue);
 
             if (it != this->stack_variable.end()) {
                 return it->second;
-            } else if(this->isFunc){
-                return varNode->id->getValue();
-            } else if(!varNode->id->getValue().compare("\n")){
-                return varNode->id->getValue();
+            } else if( toUpper(varNodeValue).find("LOAD") != std::string::npos){
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("LOAD")+5), ", ");
+
+                std::ifstream array_in("../../" + args_load.at(1)); 
+
+
+                if (!array_in.is_open()) {
+                    throw std::ios_base::failure("Error: failed to open file");
+                }
+
+                int number;
+                std::vector<int> numbers;
+
+                while (array_in >> number) {
+                    numbers.push_back(number);
+                }
+
+                array_in.close();
+                
+                this->array[args_load.at(0)] = numbers;
+
+                return {};
+            }
+            else if( toUpper(varNodeValue).find("SAVE") != std::string::npos){
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("SAVE")+5), ", ");
+                
+                std::ofstream array_out("../../" + args_load.at(1));
+                
+                if (!array_out.is_open()) {
+                    throw std::ios_base::failure("Error: failed to open file");
+                }
+
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }
+
+                // Записываем числа в файл
+                for (size_t i = 0; i < this->array[args_load.at(0)].size(); ++i) {
+                    array_out << this->array[args_load.at(0)][i];
+                    if (i != this->array[args_load.at(0)].size() - 1) {
+                        array_out << " "; // Добавляем пробел между числами, кроме последнего
+                    } else {
+                        array_out << std::endl; // Добавляем новую строку после последнего числа
+                    }
+                }
+
+                array_out.close(); // Закрываем файл    
+                return {};
+            }
+            else if( toUpper(varNodeValue).find("RAND") != std::string::npos){
+
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("RAND")+5), ", ");
+                
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }
+            
+                this->array[args_load.at(0)].clear();
+                
+                int count;
+                if (this->stack_variable.find(args_load.at(1)) != this->stack_variable.end()){
+                    count = std::any_cast<int>(this->stack_variable[args_load.at(1)]);
+                }else{
+                    try{
+                        count = std::stoi(args_load.at(1));
+                    }catch(...){
+                        throw std::runtime_error("variable " + args_load.at(1) + " is not declared or is not of type number");
+                    }
+                    
+                }
+
+                int lb;
+                if (this->stack_variable.find(args_load.at(2)) != this->stack_variable.end()){
+                    lb = std::any_cast<int>(this->stack_variable[args_load.at(2)]);
+                }else{
+                    try{
+                        lb = std::stoi(args_load.at(2));
+                    }catch(...){
+                        throw std::runtime_error("variable " + args_load.at(2) + " is not declared or is not of type number");
+                    }
+                    
+                }
+
+                int rb;
+                if (this->stack_variable.find(args_load.at(3)) != this->stack_variable.end()){
+                    rb = std::any_cast<int>(this->stack_variable[args_load.at(3)]);
+                }else{
+                    try{
+                        rb = std::stoi(args_load.at(3));
+                    }catch(...){
+                        throw std::runtime_error("variable " + args_load.at(3) + " is not declared or is not of type number");
+                    }
+                    
+                }
+
+
+                for (int i = 0; i < count; i++) {
+                    this->array[args_load.at(0)].push_back(rand() % (rb - lb + 1) + lb); // Генерируем случайное число из заданного отрезка
+                }
+
+                return {};
+            }
+            else if( toUpper(varNodeValue).find("CONCAT") != std::string::npos){
+
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("CONCAT")+7), ", ");
+                
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }           
+
+                if (this->array.find(args_load.at(1)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(1) + "\" is not declared");
+                }
+
+
+                for (int i = 0; i < this->array[args_load.at(1)].size(); i++){
+                    this->array[args_load.at(0)].push_back(this->array[args_load.at(1)][i]);
+                }
+
+
+                return {};
+            }    
+            else if( toUpper(varNodeValue).find("FREE") != std::string::npos){
+
+                auto arg = varNodeValue.substr(varNodeValue.find('(')+1, varNodeValue.find(')') - varNodeValue.find('(') - 1 );   
+                
+                if (this->array.find(arg) != this->array.end()){
+                    this->array[arg].clear();
+                }else{
+                    throw std::runtime_error("Error: array \"" + arg + "\" is not declared");
+                }        
+
+                return {};
+            }    
+            else if( toUpper(varNodeValue).find("REMOVE") != std::string::npos){
+                
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("REMOVE")+7), ", ");
+                
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }     
+
+                int start_index;
+                if (this->stack_variable.find(args_load.at(1)) != this->stack_variable.end()){
+                    start_index = std::any_cast<int>(this->stack_variable[args_load.at(1)]);
+                }else{
+                    try{
+                        start_index = std::stoi(args_load.at(1));
+                    }catch(...){
+                        throw std::runtime_error("variable " + args_load.at(1) + " is not declared or is not of type number");
+                    }
+                    
+                }
+
+                int count;
+                if (this->stack_variable.find(args_load.at(2)) != this->stack_variable.end()){
+                    count = std::any_cast<int>(this->stack_variable[args_load.at(2)]);
+                }else{
+                    try{
+                        count = std::stoi(args_load.at(2));
+                    }catch(...){
+                        throw std::runtime_error("variable " + args_load.at(2) + " is not declared or is not of type number");
+                    }
+                    
+                }
+
+                if (start_index < 0 || start_index >= this->array[args_load.at(0)].size() ||
+                    start_index + count > this->array[args_load.at(0)].size()) {
+                    throw std::out_of_range("Error: specified range is out of vector bounds.");
+                }
+
+                this->array[args_load.at(0)].erase(
+                    this->array[args_load.at(0)].begin() + start_index - 1,
+                    this->array[args_load.at(0)].begin() + start_index + count -1
+                );          
+
+                return {};
+            }    
+            else if( toUpper(varNodeValue).find("COPY") != std::string::npos){
+                
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("COPY")+5), ", ");
+                
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }  
+
+                if (this->array.find(args_load.at(3)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(3) + "\" is not declared");
+                }   
+
+                int lb;
+                if (this->stack_variable.find(args_load.at(1)) != this->stack_variable.end()){
+                    lb = std::any_cast<int>(this->stack_variable[args_load.at(1)]);
+                }else{
+                    try{
+                        lb = std::stoi(args_load.at(1));
+                    }catch(...){
+                        throw std::runtime_error("variable " + args_load.at(1) + " is not declared or is not of type number");
+                    }
+                    
+                }
+
+                int rb;
+                if (this->stack_variable.find(args_load.at(2)) != this->stack_variable.end()){
+                    rb = std::any_cast<int>(this->stack_variable[args_load.at(2)]);
+                }else{
+                    try{
+                        rb = std::stoi(args_load.at(2));
+                    }catch(...){
+                        throw std::runtime_error("variable " + args_load.at(2) + " is not declared or is not of type number");
+                    }
+                    
+                }       
+
+                this->array[args_load.at(3)].clear();
+
+                for (int i = lb; i < rb; i++){
+                    this->array[args_load.at(3)].push_back(this->array[args_load.at(0)][i]);
+                }
+
+                return {};
+            }   
+            else if( toUpper(varNodeValue).find("SORT") != std::string::npos){
+                
+                auto arg = varNodeValue.substr(5);   
+                auto sign = arg.back();  
+                arg.pop_back();
+
+                if (this->array.find(arg) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + arg + "\" is not declared");
+                }  
+
+                // Сортируем массив в зависимости от знака
+                if (sign == '+') {
+                    std::sort(this->array[arg].begin(), this->array[arg].end());
+                } else if (sign == '-') {
+                    std::sort(this->array[arg].begin(), this->array[arg].end(), std::greater<int>());
+                } else {
+                    throw std::runtime_error("Error: unknown sorting order \"" + std::string(1, sign) + "\"");
+                }
+
+                return {};
+            }   
+            else if( toUpper(varNodeValue).find("PERMUTE") != std::string::npos){
+                
+                auto arg = varNodeValue.substr(8);   
+                
+                if (this->array.find(arg) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + arg + "\" is not declared");
+                }  
+
+
+                for (int i = 0; i < this->array[arg].size(); i++) {
+                    std::sort(this->array[arg].begin(), this->array[arg].end());
+
+                    auto rnd = (rand() % this->array[arg].size());
+
+                    if (rnd != 0) {
+                        this->array[arg][rnd] ^= this->array[arg][0];
+                        this->array[arg][0] ^= this->array[arg][rnd];
+                        this->array[arg][rnd] ^= this->array[arg][0];
+                    }
+                }       
+                
+                return {};
+            }   
+            else if( toUpper(varNodeValue).find("XOR") != std::string::npos){
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("XOR")+4, varNodeValue.size()), ", ");
+
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }  
+
+                if (this->array.find(args_load.at(1)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(1) + "\" is not declared");
+                }   
+
+                std::vector<int> xor_array;
+
+                // Проходим по элементам массива A
+                for (auto& element : this->array[args_load.at(0)]) {
+                    // Проверяем, есть ли текущий элемент массива A в массиве B
+                    auto it = std::find(this->array[args_load.at(1)].begin(), this->array[args_load.at(1)].end(), element);
+                    // Если элемента нет в массиве B, добавляем его в результат
+                    if (it == this->array[args_load.at(1)].end()) {
+                        xor_array.push_back(element);
+                    }
+                }
+
+
+                // Проходим по элементам массива B
+                for (auto& element : this->array[args_load.at(1)]) {
+                    // Проверяем, есть ли текущий элемент массива B в массиве A
+                    auto it = std::find(this->array[args_load.at(0)].begin(), this->array[args_load.at(0)].end(), element);
+                    // Если элемента нет в массиве A, добавляем его в результат
+                    if (it == this->array[args_load.at(0)].end()) {
+                        xor_array.push_back(element);
+                    }
+                }
+
+                // Обновляем массив A результатом симметрической разности
+                this->array[args_load.at(0)] = xor_array;
+
+                return {};
+                
+            }
+            else if( toUpper(varNodeValue).find("INTERSECT") != std::string::npos){
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("INTERSECT")+10), ", ");
+
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }  
+
+                if (this->array.find(args_load.at(1)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(1) + "\" is not declared");
+                }   
+
+                std::vector<int> intersect_array;
+
+                // Проходим по элементам массива A
+                for (auto& element : this->array[args_load.at(0)]) {
+                    // Проверяем, есть ли текущий элемент массива A в массиве B
+                    auto it = std::find(this->array[args_load.at(1)].begin(), this->array[args_load.at(1)].end(), element);
+                    // Если элемента нет в массиве B, добавляем его в результат
+                    if (it != this->array[args_load.at(1)].end()) {
+                        intersect_array.push_back(element);
+                    }
+                }
+
+
+                // Проходим по элементам массива B
+                for (auto& element : this->array[args_load.at(1)]) {
+                    // Проверяем, есть ли текущий элемент массива B в массиве A
+                    auto it = std::find(this->array[args_load.at(0)].begin(), this->array[args_load.at(0)].end(), element);
+                    // Если элемента нет в массиве A, добавляем его в результат
+                    if (it != this->array[args_load.at(0)].end()) {
+                        intersect_array.push_back(element);
+                    }
+                }
+
+                // Обновляем массив A результатом симметрической разности
+                this->array[args_load.at(0)] = intersect_array;
+
+                return {};
+                
+            }
+            else if (toUpper(varNodeValue).find("PRINT") != std::string::npos) {
+                auto args_load = split(varNodeValue.substr(toUpper(varNodeValue).find("PRINT")+6), ", ");
+                if (this->array.find(args_load.at(0)) == this->array.end()){
+                    throw std::runtime_error("Error: array \"" + args_load.at(0) + "\" is not declared");
+                }  
+
+                if (!args_load.at(1).compare("all")){
+                    for (int i = 0; i < this->array[args_load.at(0)].size(); i++){
+                        std::cout << this->array[args_load.at(0)][i] << " ";
+                    }
+                    std::cout << std::endl;
+                }else{
+                
+                    int lb;
+                    if (this->stack_variable.find(args_load.at(1)) != this->stack_variable.end()){
+                        lb = std::any_cast<int>(this->stack_variable[args_load.at(1)]);
+                    }else{
+                        try{
+                            lb = std::stoi(args_load.at(1));
+                        }catch(...){
+                            throw std::runtime_error("variable " + args_load.at(1) + " is not declared or is not of type number");
+                        }
+                        
+                    }
+
+                    int rb;
+                    if (this->stack_variable.find(args_load.at(2)) != this->stack_variable.end()){
+                        rb = std::any_cast<int>(this->stack_variable[args_load.at(2)]);
+                    }else{
+                        try{
+                            rb = std::stoi(args_load.at(2));
+                        }catch(...){
+                            throw std::runtime_error("variable " + args_load.at(2) + " is not declared or is not of type number");
+                        }
+                        
+                    }     
+
+                    for (int i = lb-1; i < rb-1; i++){
+                        std::cout << this->array[args_load.at(0)][i] << " ";
+                    }
+                    std::cout << std::endl;                    
+                }
+                return {};
+            }
+            else if (toUpper(varNodeValue).find("STAT") != std::string::npos) {
+
+                auto arg = varNodeValue.substr(5);   
+
+                if (this->array.find(arg) == this->array.end()) {
+                    throw std::runtime_error("Error: array \"" + arg + "\" is not declared");
+                }  
+
+                auto max_it = std::max_element(this->array[arg].begin(), this->array[arg].end());
+                auto max_element = *max_it;
+                auto max_index = std::distance(this->array[arg].begin(), max_it);
+
+                auto min_it = std::min_element(this->array[arg].begin(), this->array[arg].end());
+                auto min_element = *min_it;
+                auto min_index = std::distance(this->array[arg].begin(), min_it);
+
+                std::unordered_map<int, size_t> frequency_map;
+                for (int num : this->array[arg]) {
+                    frequency_map[num]++;
+                }
+                auto most_frequent_it = std::max_element(frequency_map.begin(), frequency_map.end(), 
+                    [](const auto& a, const auto& b) { return a.second < b.second; });
+                auto most_frequent = most_frequent_it->first;
+
+                double sum = 0;
+                for (int num : this->array[arg]) {
+                    sum += num;
+                }
+
+                auto average = sum / this->array[arg].size();
+
+                double max_deviation = 0;
+                for (int num : this->array[arg]) {
+                    double deviation = std::abs(num - average);
+                    if (deviation > max_deviation) {
+                        max_deviation = deviation;
+                    }
+                }
+
+                std::cout << "Data \"" + arg + "\" array:" << std::endl;
+                std::cout << "1) Array size: " << this->array[arg].size() << std::endl;
+                std::cout << "2) Max element: " << max_element << " (" << max_index << ")" << std::endl;
+                std::cout << "3) Min element: " << min_element << " (" << min_index << ")" << std::endl;
+                std::cout << "4) Most frequent element: " << most_frequent << std::endl;
+                std::cout << "5) Average value: " << average << std::endl;
+                std::cout << "6) Max deviation: " << max_deviation << std::endl;
+
+                return {};
+            }
+            else if(this->isFunc){
+                return varNodeValue;
+            } else if(!varNodeValue.compare("\n")){
+                return varNodeValue;
             }
             else{
                 
-                std::string id_func = varNode->id->getValue().substr(0, varNode->id->getValue().find('('));
-                auto arg_value_lst = split(varNode->id->getValue().substr(varNode->id->getValue().find('(') + 1, varNode->id->getValue().find(')') - varNode->id->getValue().find('(') - 1), " ,");
+                std::string id_func = varNodeValue.substr(0, varNodeValue.find('('));
+                auto arg_value_lst = split(varNodeValue.substr(varNode->id->getValue().find('(') + 1, varNodeValue.find(')') - varNodeValue.find('(') - 1), " ,");
                 
-                auto arg_value_lst2 = split(varNode->id->getValue().substr(varNode->id->getValue().find('(') + 1, varNode->id->getValue().find(')') - varNode->id->getValue().find('(') - 1), "*/-+ ", true);
+                auto arg_value_lst2 = split(varNodeValue.substr(varNode->id->getValue().find('(') + 1, varNodeValue.find(')') - varNodeValue.find('(') - 1), "*/-+ ", true);
                 for (auto& pair : this->stack_function) {
 
                     if (pair.first.find(id_func) != std::string::npos) {

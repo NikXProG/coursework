@@ -8,10 +8,25 @@
 
 class Lexer {
     
+
     std::unordered_map<Token::TokenType, std::regex> tokenTypesList {
+        {Token::TokenType::PRINT_EL_LST, std::regex(R"(^\s*(Print|print)\s([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*)")},
+        {Token::TokenType::PRINT_ALL, std::regex(R"(^\s*(Print|print)\s([a-zA-Z0-9][a-zA-Z0-9]*)\s*, \s*([a-zA-Z]*)\s*)")},
         {Token::TokenType::CONSOLE, std::regex("^print")},
+        {Token::TokenType::LOAD, std::regex(R"(^\s*(load|Load)\s([a-zA-Z][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9_.]+)\s*)")},
+        {Token::TokenType::SAVE, std::regex(R"(^\s*(save|Save)\s([a-zA-Z][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9_.]+)\s*)")},
+        {Token::TokenType::RAND, std::regex(R"(^\s*(rand|Rand)\s([a-zA-Z][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*)")},   
+        {Token::TokenType::CONCAT, std::regex(R"(^\s*(concat|Concat)\s([a-zA-Z][a-zA-Z0-9]*)\s*,\s*([a-zA-Z][a-zA-Z0-9]*)\s*)")}, 
+        {Token::TokenType::FREE, std::regex(R"(^\s*(free|Free)\(([a-zA-Z][a-zA-Z0-9]*)\)\s*)")}, 
+        {Token::TokenType::REMOVE, std::regex(R"(^\s*(remove|Remove)\s([a-zA-Z][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*)")},   
+        {Token::TokenType::COPY, std::regex(R"(^\s*(copy|Copy)\s([a-zA-Z][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z][a-zA-Z0-9]*)\s*)")}, 
+        {Token::TokenType::SORT, std::regex(R"(^\s*(sort|Sort)\s([a-zA-Z][a-zA-Z0-9]*)(\+|-)\s*)")}, 
+        {Token::TokenType::PERMUTE, std::regex(R"(^\s*(permute|Permute)\s([a-zA-Z][a-zA-Z0-9]*)\s*)")}, 
+        {Token::TokenType::INTERSECT, std::regex(R"(^\s*(intersect|Intersect)\s([a-zA-Z][a-zA-Z0-9]*)\s*,\s*([a-zA-Z][a-zA-Z0-9]*)\s*)")},
+        {Token::TokenType::XOR, std::regex(R"(^\s*(xor|Xor)\s([a-zA-Z0-9][a-zA-Z0-9]*)\s*,\s*([a-zA-Z0-9][a-zA-Z0-9]*)\s*)")},
+        {Token::TokenType::STAT, std::regex(R"(^\s*(stat|Stat)\s([a-zA-Z0-9][a-zA-Z0-9]*)\s*)")},       
         {Token::TokenType::NUMBER, std::regex("^([0-9]+[.0-9]*)")},
-        {Token::TokenType::ID, std::regex("^((?!print)[a-zA-Z][a-zA-Z0-9]*)(?:\\s*\\(([^()]*)\\)\\s*)?")},
+        {Token::TokenType::ID, std::regex("^((?!print)(?!load|Load)(?!Print)(?!rand|Rand)(?!concat|Concat)(?!remove|Remove)(?!copy|Copy)[a-zA-Z]+[0-9]*)(?:\\s*\\(([^()]*)\\)\\s*)?")},
         {Token::TokenType::SEMICOLON, std::regex("^\\;")},
         {Token::TokenType::SPACE, std::regex("^([ \\n\\r\\t,])")},
         {Token::TokenType::ASSIGN, std::regex("^\\=")},
@@ -22,6 +37,7 @@ class Lexer {
         {Token::TokenType::MINUS, std::regex("^\\-")},
         {Token::TokenType::LPAREN, std::regex("^\\(")},
         {Token::TokenType::RPAREN, std::regex("^\\)")}
+   
     };
 
     std::string code;
