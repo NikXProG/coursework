@@ -11,9 +11,10 @@ int main() {
 
         lexer.lexAnalysis();
 
-        for (int i = 0; i < lexer.getTokenSize() ; i++){
-            std::cout << Token::token_to_string(lexer.getTokenList()[i].getType()) << " " << lexer.getTokenList()[i].getValue() << std::endl;
-        }
+        //for (int i = 0; i < lexer.getTokenSize() ; i++){
+        //    std::cout << Token::token_to_string(lexer.getTokenList()[i].getType()) << " " << lexer.getTokenList()[i].getValue() << std::endl;
+        //}
+        
         Parser parser(lexer);
 
         ExpressionNode* rootNode = parser.parse();

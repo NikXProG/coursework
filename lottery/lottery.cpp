@@ -353,6 +353,7 @@ public:
 template <typename Ticket, template<typename> class Container>
 class LotteryQueue : public Lottery<Ticket> {
 private:
+
     Container<Ticket> tickets;
     std::unordered_map<int, std::vector<Ticket>> winners;
     std::vector<int> drawn_numbers;
@@ -420,7 +421,7 @@ public:
 
 int main() {
     try{
-        const int total_count_tickets = 30000000;
+        const int total_count_tickets = 100000;
         const int total_available_numbers = 36;
         const int draw_numbers = 5;
 

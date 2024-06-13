@@ -13,6 +13,10 @@ print myvar5;
 print;
 print;
 print;
+
+
+
+
 Load A, in.txt;
 Load b, in2.txt;
 Save A, out3.txt;
@@ -33,3 +37,5 @@ Xor A,b;
 Stat A;
 Print A, all;
 Print A, 4, 16;
+
+

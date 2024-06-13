@@ -1,338 +1,328 @@
 {
-    "run": [
-        "sprint", 
-        "jog", 
-        "race", 
-        "dash"
-    ],
-    "happy": [
-        "joyful", 
-        "elated", 
-        "content", 
-        "pleased"
-    ],
-    "big": [
-        "large", 
-        "huge", 
-        "massive", 
-        "gigantic"
-    ],
-    "smart": [
-        "intelligent", 
-        "clever", 
-        "bright", 
-        "sharp"
-    ],
-    "cold": [
-        "chilly", 
-        "freezing", 
-        "frigid", 
-        "icy"
-    ],
     "angry": [
-        "mad", 
-        "furious", 
-        "irate", 
-        "enraged"
-    ],
-    "eat": [
-        "consume", 
-        "devour", 
-        "ingest", 
-        "feast"
-    ],
-    "drink": [
-        "imbibe", 
-        "sip", 
-        "gulp", 
-        "quaff"
-    ],
-    "sad": [
-        "unhappy", 
-        "gloomy", 
-        "mournful", 
-        "depressed"
-    ],
-    "fast": [
-        "quick", 
-        "rapid", 
-        "swift", 
-        "speedy"
-    ],
-    "rich": [
-        "wealthy", 
-        "affluent", 
-        "prosperous", 
-        "well-off"
-    ],
-    "poor": [
-        "impoverished", 
-        "needy", 
-        "destitute", 
-        "indigent"
-    ],
-    "hot": [
-        "warm", 
-        "scorching", 
-        "sizzling", 
-        "boiling"
-    ],
-    "good": [
-        "great", 
-        "excellent", 
-        "superb", 
-        "fine"
+        "enraged",
+        "furious",
+        "irate",
+        "mad"
     ],
     "bad": [
-        "poor", 
-        "terrible", 
-        "awful", 
-        "horrible"
-    ],
-    "small": [
-        "tiny", 
-        "little", 
-        "miniature", 
-        "minuscule"
-    ],
-    "young": [
-        "youthful", 
-        "adolescent", 
-        "juvenile", 
-        "fresh"
-    ],
-    "bright": [
-        "shining", 
-        "radiant", 
-        "luminous", 
-        "gleaming"
-    ],
-    "dark": [
-        "dim", 
-        "gloomy", 
-        "shadowy", 
-        "murky"
-    ],
-    "calm": [
-        "serene", 
-        "tranquil", 
-        "peaceful", 
-        "placid"
-    ],
-    "cool": [
-        "chilly", 
-        "refreshing", 
-        "brisk", 
-        "crisp"
-    ],
-    "dry": [
-        "arid", 
-        "parched", 
-        "barren", 
-        "desert"
-    ],
-    "wet": [
-        "damp", 
-        "moist", 
-        "soaked", 
-        "soggy"
-    ],
-    "short": [
-        "brief", 
-        "concise", 
-        "succinct", 
-        "compact"
-    ],
-    "long": [
-        "lengthy", 
-        "extended", 
-        "prolonged", 
-        "enduring"
-    ],
-    "soft": [
-        "gentle", 
-        "mild", 
-        "tender", 
-        "delicate"
-    ],
-    "hard": [
-        "firm", 
-        "solid", 
-        "sturdy", 
-        "tough"
-    ],
-    "sweet": [
-        "sugary", 
-        "tasty", 
-        "delicious", 
-        "pleasant"
-    ],
-    "sour": [
-        "tart", 
-        "acidic", 
-        "bitter", 
-        "sharp"
-    ],
-    "bitter": [
-        "acrid", 
-        "harsh", 
-        "unpleasant", 
-        "astringent"
-    ],
-    "tired": [
-        "exhausted", 
-        "fatigued", 
-        "weary", 
-        "spent"
-    ],
-    "energetic": [
-        "vibrant", 
-        "dynamic", 
-        "vigorous", 
-        "lively"
-    ],
-    "clean": [
-        "tidy", 
-        "neat", 
-        "spotless", 
-        "immaculate"
-    ],
-    "dirty": [
-        "messy", 
-        "filthy", 
-        "grimy", 
-        "soiled"
-    ],
-    "thick": [
-        "dense", 
-        "concentrated", 
-        "viscous", 
-        "compact"
-    ],
-    "thin": [
-        "slender", 
-        "slim", 
-        "narrow", 
-        "svelte"
-    ],
-    "wide": [
-        "broad", 
-        "spacious", 
-        "vast", 
-        "expansive"
-    ],
-    "narrow": [
-        "tight", 
-        "cramped", 
-        "confined", 
-        "constricted"
-    ],
-    "sharp": [
-        "keen", 
-        "acute", 
-        "penetrating", 
-        "intense"
-    ],
-    "dull": [
-        "blunt", 
-        "boring", 
-        "tedious", 
-        "uninteresting"
-    ],
-    "new": [
-        "fresh", 
-        "recent", 
-        "modern", 
-        "novel"
-    ],
-    "old": [
-        "ancient", 
-        "antique", 
-        "vintage", 
-        "archaic"
-    ],
-    "slow": [
-        "sluggish", 
-        "leisurely", 
-        "gradual", 
-        "languid"
-    ],
-    "expensive": [
-        "costly", 
-        "pricey", 
-        "valuable", 
-        "high-priced"
-    ],
-   "cheap": [
-        "inexpensive", 
-        "affordable", 
-        "budget", 
-        "low-cost"
-    ],
-    "loud": [
-        "boisterous", 
-        "raucous", 
-        "clamorous", 
-        "deafening"
-    ],
-    "quiet": [
-        "silent", 
-        "hushed", 
-        "peaceful", 
-        "serene"
-    ],
-    "strong": [
-        "powerful", 
-        "robust", 
-        "sturdy", 
-        "muscular"
-    ],
-    "weak": [
-        "frail", 
-        "feeble", 
-        "fragile", 
-        "delicate"
+        "awful",
+        "horrible",
+        "poor",
+        "terrible"
     ],
     "beautiful": [
-        "gorgeous", 
-        "stunning", 
-        "lovely", 
-        "attractive"
+        "attractive",
+        "gorgeous",
+        "lovely",
+        "stunning"
     ],
-    "ugly": [
-        "unattractive", 
-        "hideous", 
-        "unsightly", 
-        "repulsive"
+    "big": [
+        "gigantic",
+        "huge",
+        "large",
+        "massive"
+    ],
+    "bitter": [
+        "acrid",
+        "astringent",
+        "harsh",
+        "unpleasant"
     ],
     "brave": [
-        "courageous", 
-        "fearless", 
-        "valiant", 
-        "bold"
+        "bold",
+        "courageous",
+        "fearless",
+        "valiant"
+    ],
+    "bright": [
+        "gleaming",
+        "luminous",
+        "radiant",
+        "shining"
+    ],
+    "calm": [
+        "placid",
+        "tranquil"
+    ],
+    "cheap": [
+        "affordable",
+        "budget",
+        "inexpensive",
+        "low-cost"
+    ],
+    "clean": [
+        "immaculate",
+        "neat",
+        "spotless",
+        "tidy"
+    ],
+    "cold": [
+        "freezing",
+        "frigid",
+        "icy"
+    ],
+    "cool": [
+        "brisk",
+        "chilly",
+        "crisp",
+        "refreshing"
     ],
     "coward": [
-        "timid", 
-        "faint-hearted", 
-        "spineless", 
-        "craven"
+        "craven",
+        "faint-hearted",
+        "spineless",
+        "timid"
     ],
-    "healthy": [
-        "fit", 
-        "well", 
-        "robust", 
-        "hale"
+    "dark": [
+        "dim",
+        "murky",
+        "shadowy"
     ],
-    "sick": [
-        "ill", 
-        "unwell", 
-        "ailing", 
-        "sickly"
+    "dirty": [
+        "filthy",
+        "grimy",
+        "messy",
+        "soiled"
+    ],
+    "drink": [
+        "gulp",
+        "imbibe",
+        "quaff",
+        "sip"
+    ],
+    "dry": [
+        "arid",
+        "barren",
+        "desert",
+        "parched"
+    ],
+    "dull": [
+        "blunt",
+        "boring",
+        "tedious",
+        "uninteresting"
     ],
     "early": [
-        "premature", 
-        "untimely", 
-        "beforehand", 
-        "in advance"
+        "beforehand",
+        "in advance",
+        "premature",
+        "untimely"
+    ],
+    "eat": [
+        "consume",
+        "devour",
+        "feast",
+        "ingest"
+    ],
+    "energetic": [
+        "dynamic",
+        "lively",
+        "vibrant",
+        "vigorous"
+    ],
+    "expensive": [
+        "costly",
+        "high-priced",
+        "pricey",
+        "valuable"
+    ],
+    "fast": [
+        "quick",
+        "rapid",
+        "speedy",
+        "swift"
+    ],
+    "good": [
+        "excellent",
+        "fine",
+        "great",
+        "superb"
+    ],
+    "happy": [
+        "content",
+        "elated",
+        "joyful",
+        "pleased"
+    ],
+    "hard": [
+        "firm",
+        "solid",
+        "tough"
+    ],
+    "healthy": [
+        "fit",
+        "hale",
+        "well"
+    ],
+    "hot": [
+        "boiling",
+        "scorching",
+        "sizzling",
+        "warm"
+    ],
+    "long": [
+        "enduring",
+        "extended",
+        "lengthy",
+        "prolonged"
+    ],
+    "loud": [
+        "boisterous",
+        "clamorous",
+        "deafening",
+        "raucous"
+    ],
+    "narrow": [
+        "confined",
+        "constricted",
+        "cramped",
+        "tight"
+    ],
+    "new": [
+        "modern",
+        "novel",
+        "recent"
+    ],
+    "old": [
+        "ancient",
+        "antique",
+        "archaic",
+        "vintage"
+    ],
+    "poor": [
+        "destitute",
+        "impoverished",
+        "indigent",
+        "needy"
+    ],
+    "quiet": [
+        "hushed",
+        "peaceful",
+        "serene",
+        "silent"
+    ],
+    "rich": [
+        "affluent",
+        "prosperous",
+        "wealthy",
+        "well-off"
+    ],
+    "run": [
+        "dash",
+        "jog",
+        "race",
+        "sprint"
+    ],
+    "sad": [
+        "depressed",
+        "gloomy",
+        "mournful",
+        "unhappy"
+    ],
+    "sharp": [
+        "acute",
+        "intense",
+        "keen",
+        "penetrating"
+    ],
+    "short": [
+        "brief",
+        "concise",
+        "succinct"
+    ],
+    "sick": [
+        "ailing",
+        "ill",
+        "sickly",
+        "unwell"
+    ],
+    "slow": [
+        "gradual",
+        "languid",
+        "leisurely",
+        "sluggish"
+    ],
+    "small": [
+        "little",
+        "miniature",
+        "minuscule",
+        "tiny"
+    ],
+    "smart": [
+        "bright",
+        "clever",
+        "intelligent"
+    ],
+    "soft": [
+        "gentle",
+        "mild",
+        "tender"
+    ],
+    "sour": [
+        "acidic",
+        "bitter",
+        "sharp",
+        "tart"
+    ],
+    "strong": [
+        "muscular",
+        "powerful",
+        "robust",
+        "sturdy"
+    ],
+    "sweet": [
+        "delicious",
+        "pleasant",
+        "sugary",
+        "tasty"
+    ],
+    "thick": [
+        "compact",
+        "concentrated",
+        "dense",
+        "viscous"
+    ],
+    "thin": [
+        "narrow",
+        "slender",
+        "slim",
+        "svelte"
+    ],
+    "tired": [
+        "exhausted",
+        "fatigued",
+        "spent",
+        "weary"
+    ],
+    "ugly": [
+        "hideous",
+        "repulsive",
+        "unattractive",
+        "unsightly"
+    ],
+    "weak": [
+        "delicate",
+        "feeble",
+        "fragile",
+        "frail"
+    ],
+    "wet": [
+        "damp",
+        "moist",
+        "soaked",
+        "soggy"
+    ],
+    "wide": [
+        "broad",
+        "expansive",
+        "spacious",
+        "vast"
+    ],
+    "young": [
+        "adolescent",
+        "fresh",
+        "juvenile",
+        "youthful"
     ]
 }

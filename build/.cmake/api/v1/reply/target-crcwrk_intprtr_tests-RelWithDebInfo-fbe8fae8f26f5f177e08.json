@@ -90,12 +90,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 2,
-			"id" : "crcwrk_intprtr_lxr::@5a1904694c5a55962a68"
-		},
-		{
 			"backtrace" : 3,
 			"id" : "crcwrk_intprtr_prsr::@3a4963c009887eca9bf2"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "crcwrk_intprtr_lxr::@5a1904694c5a55962a68"
 		},
 		{
 			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
